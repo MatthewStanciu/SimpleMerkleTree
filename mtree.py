@@ -24,7 +24,7 @@ def create_tree(hash_list):
         child_hash_list.append(left + right)  # Group the hashes
 
     if len(hash_list) % 2 == 1:  # If there is an odd number, keep hashing the last thing to itself
-        child_hash_list.append(hash_list[-1])
+        child_hash_list.append(hash_list[-1])  # Append the last element
 
     if len(hash_list) == 1:
         print("Merkle root:")
