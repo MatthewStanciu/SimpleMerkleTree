@@ -4,7 +4,7 @@ import hashlib
 def turn_into_hash(hash_list):  # This is here just in case your example is like mine and you need to hash them first
     hashed_hashlist = []
     for item in hash_list:
-        item = hashlib.sha256(('b' + item).encode('utf-8')).hexdigest()
+        item = hashlib.sha256(item.encode('utf-8')).hexdigest()
         hashed_hashlist.append(item)
 
     return hashed_hashlist
@@ -22,7 +22,7 @@ def create_tree(hash_list):
         left = hash_list[index]
         right = hash_list[index + 1]
 
-        child_hash_list.append(left + right)  # Group the hashes
+        child_hash_list.append(hashlib.sha256((left + right).encode('utf-8')).hexdigest())  # Group the hashes
 
     if len(hash_list) % 2 == 1:  # If there is an odd number of items in the list, keep hashing the last item to itself
         child_hash_list.append(hash_list[-1])  # Append the last element
