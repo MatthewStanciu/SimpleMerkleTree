@@ -11,6 +11,6 @@ example_hash_list = [
   "33",
   "44",
   "55"
-  #"66"
+  "66"
 ]
 print(mtree.create_tree(example_hash_list))
