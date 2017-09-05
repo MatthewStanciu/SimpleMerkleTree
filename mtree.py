@@ -1,8 +1,8 @@
 import hashlib
 
 def double_hash(hash_string):
-    first_hash = hashlib.sha256(hash_string.encode('utf-8')).hexdigest()
-    return hashlib.sha256(first_hash.encode('utf-8')).hexdigest()
+    first_hash = hashlib.sha256(hash_string.encode()).hexdigest()
+    return hashlib.sha256(first_hash.encode()).hexdigest()
 
 def turn_into_hash(hash_list):  # This is here just in case your example is like mine and you need to hash them first
     hashed_hashlist = []
